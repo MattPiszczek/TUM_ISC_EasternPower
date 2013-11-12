@@ -1,0 +1,1 @@
+This is project for Introduction to Service Computing from winter semester 2013 course in Technical University Munich.
