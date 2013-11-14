@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hotel>
+  <rooms>
+    <room>
+      <type>str1234</type>
+      <totalAmount>123</totalAmount>
+      <rate>123</rate>
+    </room>
+  </rooms>
+  <bookings>
+    <booking>
+      <bookingID>str1234</bookingID>
+      <type>str1234</type>
+      <amount>123</amount>
+      <stayPeriod>
+        <checkin>
+          <year>123</year>
+          <month>123</month>
+          <date>123</date>
+        </checkin>
+        <checkout>
+          <year>123</year>
+          <month>123</month>
+          <date>123</date>
+        </checkout>
+      </stayPeriod>
+    </booking>
+  </bookings>
+</hotel>

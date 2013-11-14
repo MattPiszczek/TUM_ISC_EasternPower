@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/BookCategoryDB" xmlns:tns="http://www.example.org/BookCategoryDB" elementFormDefault="qualified">
+
+    <element name="category" type="tns:CategoryInfo"></element>
+    
+    <complexType name="CategoryInfo">
+    	<sequence>
+    		<element name="book" type="tns:BookInfo" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="BookInfo">
+    	<sequence>
+    		<element name="title" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="resourceID" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="ISBN13" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ISBN10" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="authors" type="tns:AuthorsInfo" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="pageNum" type="int" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="publisher" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="publishdate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="version" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="price" type="double" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="AuthorsInfo">
+    	<sequence>
+    		<element name="author" type="string" maxOccurs="unbounded" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+</schema>

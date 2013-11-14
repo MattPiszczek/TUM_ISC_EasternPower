@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FlightDB" xmlns:tns="http://www.example.org/FlightDB" elementFormDefault="qualified">
+
+    <element name="tickets" type="tns:TicketInfo"></element>
+    
+    <complexType name="TicketInfo">
+    	<sequence>
+    		<element name="airlines" type="tns:AirlineList"></element>
+    		<element name="bookings" type="tns:BookingList"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="AirlineList">
+    	<sequence>
+    		<element name="airline" type="tns:AirlineInfo" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="BookingList">
+    	<sequence>
+    		<element name="booking" type="tns:BookingInfo" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="AirlineInfo">
+    	<sequence>
+    		<element name="flightNo" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="departure" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="destination" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="seats" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="price" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="dates" type="tns:DateList" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="BookingInfo">
+    	<sequence>
+    		<element name="bookingID" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="flightNo" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="seats" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="date" type="tns:DateInfo" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="DateList">
+    	<sequence>
+    		<element name="date" type="tns:DateInfo" maxOccurs="unbounded" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="DateInfo">
+    	<sequence>
+    		<element name="year" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="month" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="day" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>

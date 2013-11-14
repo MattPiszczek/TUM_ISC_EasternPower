@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/bankDB" xmlns:tns="http://www.example.org/bankDB" elementFormDefault="qualified">
+
+    <element name="bank" type="tns:BanKInfo"></element>
+    
+    <complexType name="BanKInfo">
+    	<sequence>
+    		<element name="account" type="tns:AccountInfo" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="AccountInfo">
+    	<sequence>
+    		<element name="accountID" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="amount" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+</schema>

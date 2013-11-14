@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/HotelDB" xmlns:tns="http://www.example.org/HotelDB" elementFormDefault="qualified">
+
+    <element name="hotel" type="tns:HotelInfo"></element>
+    
+    <complexType name="HotelInfo">
+    	<sequence>
+    		<element name="rooms" type="tns:RoomList" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="bookings" type="tns:BookingList"
+    			maxOccurs="1" minOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="BookingList">
+    	<sequence>
+    		<element name="booking" type="tns:BookingInfo" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="RoomList">
+    	<sequence>
+    		<element name="room" type="tns:RoomInfo"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="RoomInfo">
+    	<sequence>
+    		<element name="type" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="totalAmount" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="rate" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="BookingInfo">
+    	<sequence>
+    		<element name="bookingID" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="type" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="amount" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="stayPeriod" type="tns:stayPeriodType" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="stayPeriodType">
+    	<sequence>
+    		<element name="checkin" type="tns:ReservationDateInfo" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="checkout" type="tns:ReservationDateInfo" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ReservationDateInfo">
+    	<sequence>
+    		<element name="year" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="month" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="date" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+</schema>
